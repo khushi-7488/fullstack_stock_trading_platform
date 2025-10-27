@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.nav-link{
+  margin-left: 40px;
+}
+.footer-links{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  gap: 40px;
+}
+.footer-links a{
+  text-decoration: none;
+}
+.footer-link a{
+
+  color: grey;
+  text-decoration: none;
+}
+.footer-link{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-link p{
+  font-weight: bold;
+
+}
+.icons a{
+  color: rgb(105, 105, 105);
+}
+footer a:hover{
+  color:rgb(89, 89, 243)
+}
