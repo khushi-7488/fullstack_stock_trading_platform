@@ -8,11 +8,11 @@ function Footer() {
                         <img src="media/images/logo.svg" style={{ width: "60%" }} alt="" />
                         <p className='mt-4 ' style={{ fontSize: "12px" }}>&copy; 2010- 2024 Not Zerodha broken LTD. <br /> All rights reserved </p>
                         <div className='icons'>
-                            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
-                            <a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i>  </a>&nbsp;&nbsp;&nbsp;
-                            <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
-                            <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
-                            <a href=""><i class="fa fa-telegram" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a href=""><i className="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a href=""><i className="fa fa-facebook-official" aria-hidden="true"></i>  </a>&nbsp;&nbsp;&nbsp;
+                            <a href=""><i className="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a href=""><i className="fa fa-linkedin" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
+                            <a href=""><i className="fa fa-telegram" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
                         </div>
                     </div>
                     <div className='col-3 footer-link mb-4 '>

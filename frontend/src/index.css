@@ -43,3 +43,7 @@ code {
 footer a:hover{
   color:rgb(89, 89, 243)
 }
+.hero{
+  display: flex;
+  justify-content: space-between;
+}
