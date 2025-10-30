@@ -508,6 +508,7 @@ hr {
   font-weight: 300;
 }
 
+
 .section-icon {
   transform: scale(0.8);
   color: rgb(112, 112, 112);
@@ -713,6 +714,11 @@ hr {
   flex: 1;
 }
 
+.actions > span {
+  display: flex;
+  align-items: center;
+}
+
 .actions {
   position: absolute;
   top: 0;
@@ -730,11 +736,19 @@ hr {
   border-radius: 4px;
   text-align: center;
   margin-right: 8px;
+  
   cursor: pointer;
 }
 
 .buy {
   background-color: #4184f3;
+  color: #fff;
+  font-weight: 400;
+  font-size: 0.8rem;
+  border: 0.7px solid #4184f3;
+}
+.more {
+  background-color: #3d07c6;
   color: #fff;
   font-weight: 400;
   font-size: 0.8rem;
