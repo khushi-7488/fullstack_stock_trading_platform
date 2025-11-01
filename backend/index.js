@@ -7,6 +7,7 @@ const cors = require("cors");
 const PORT = process.env.PORT || 3002;
 const URL = process.env.MONGO_URL;
 
+
 const app = express();
 
 app.use(cors());
@@ -14,7 +15,7 @@ app.use(bodyParser.json());
 
 const { HoldingsModel } = require("./model/HoldingsModel")
 const { PositionsModel } = require("./model/PositionsModel")
-
+const { OrdersModel } = require("./model/OrdersModel")
 
 // app.get("/addHoldings", async (req, res) => {
 //     let tempHoldings = [
@@ -193,6 +194,16 @@ app.get("/allHoldings", async (req, res) => {
 app.get("/allPositions", async (req, res) => {
     let allPositions = await PositionsModel.find({})
     res.json(allPositions)
+})
+
+app.post("/newOrder", async (req, res) => {
+    let newOrder = new OrdersModel({
+        name: req.body.name,
+        qty: req.body.qty,
+        price: req.body.price,
+        mode: req.body.mode,
+    })
+    await newOrder.save();
 })
 
 app.listen(PORT, () => {

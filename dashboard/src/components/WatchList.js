@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { Tooltip, Grow } from "@mui/material";
 import { watchlist } from "../data/data";
 import { BarChartOutlined, KeyboardArrowDown, KeyboardArrowUp, MoreHoriz } from "@mui/icons-material"
+import GeneralContext from "./GeneralContext";
 
 const WatchList = () => {
   return (
@@ -62,12 +63,21 @@ const WatchListItem = ({ stock }) => {
 
 
 const WatchListActions = ({ uid }) => {
+  const generalContext = useContext(GeneralContext);
+
+  const handleBuyClick = () => {
+    if (generalContext && generalContext.openBuyWindow) {
+      generalContext.openBuyWindow(uid);
+    } else {
+      console.error('openBuyWindow not available in context');
+    }
+  }
+
   return (
     <span className="actions">
-      <span className="actions"></span>
       <span>
-        <Tooltip title="Buy (B)" placement="top" arrow slots={{ transition: Grow }}>
-          <button className="buy">Buy</button>
+        <Tooltip title="Buy (B)" onClick={handleBuyClick} placement="top" arrow slots={{ transition: Grow }}>
+          <button className="buy" >Buy</button>
         </Tooltip>
 
         <Tooltip title="Sell (S)" placement="top" arrow slots={{ transition: Grow }}>
@@ -76,17 +86,16 @@ const WatchListActions = ({ uid }) => {
 
         <Tooltip title="Analytics (A)" placement="top" arrow slots={{ transition: Grow }}>
           <button className="action">
-
             <BarChartOutlined className="icon" />
           </button>
         </Tooltip>
+
         <Tooltip title="More (M)" placement="top" arrow slots={{ transition: Grow }}>
           <button className="action">
             <MoreHoriz className="icon" />
           </button>
         </Tooltip>
-
-      </span>More
+      </span>
     </span>
   )
 }
