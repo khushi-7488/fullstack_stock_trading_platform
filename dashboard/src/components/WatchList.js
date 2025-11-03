@@ -125,11 +125,13 @@ const WatchListActions = ({ uid }) => {
   const generalContext = useContext(GeneralContext);
 
   const handleBuyClick = () => {
-    if (generalContext && generalContext.openBuyWindow) {
-      generalContext.openBuyWindow(uid);
-    } else {
-      console.error('openBuyWindow not available in context');
-    }
+    generalContext.openBuyWindow(uid);
+  }
+
+
+  const handleSellClick = () => {
+    generalContext.openSellWindow(uid);
+
   }
 
   return (
@@ -139,7 +141,7 @@ const WatchListActions = ({ uid }) => {
           <button className="buy" >Buy</button>
         </Tooltip>
 
-        <Tooltip title="Sell (S)" placement="top" arrow slots={{ transition: Grow }}>
+        <Tooltip title="Sell (S)" onClick={handleSellClick} placement="top" arrow slots={{ transition: Grow }}>
           <button className="sell">Sell</button>
         </Tooltip>
 
